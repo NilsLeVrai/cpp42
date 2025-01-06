@@ -7,7 +7,6 @@ INCLUDES = -I ./includes/
 SRC_DIR = .
 
 SOURCES =  Zombie.cpp \
-			newZombie.cpp \
 			zombieHorde.cpp \
 			main.cpp
 	
