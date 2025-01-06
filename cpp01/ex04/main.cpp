@@ -6,15 +6,16 @@
 /*   By: niabraha <niabraha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 17:54:33 by niabraha          #+#    #+#             */
-/*   Updated: 2025/01/06 18:09:59 by niabraha         ###   ########.fr       */
+/*   Updated: 2025/01/06 18:21:31 by niabraha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <fstream>
 
-int main(int argc, char **argv) 
+bool validateArguments(int argc, char **argv)
 {
+	
 	std::ifstream file(argv[1]);
 	if (argc != 4)
 	{
@@ -33,4 +34,15 @@ int main(int argc, char **argv)
 		std::cerr << "Empty string are not allowed." << std::endl;
 		return (1);
 	}
+	return (0);
+}
+
+int main(int argc, char **argv) 
+{
+	if (validateArguments(argc, argv))
+	{
+		std::cout << "Arguments are not valid." << std::endl;
+		return (1);
+	}
+	std::cout << "File opened successfully." << std::endl;
 }
