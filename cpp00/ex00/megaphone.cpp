@@ -6,7 +6,7 @@
 /*   By: niabraha <niabraha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 13:55:19 by niabraha          #+#    #+#             */
-/*   Updated: 2024/11/14 14:26:55 by niabraha         ###   ########.fr       */
+/*   Updated: 2025/01/07 15:18:38 by niabraha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int main(int argc, char **argv)
         for (int j = 0; argv[i][j]; j++)
             std::cout << (char)std::toupper(argv[i][j]);
         if (argv[i + 1])
-            std::cout << " ";
+            std::cout << "";
 		else
 			std::cout << "\n";
 	}
