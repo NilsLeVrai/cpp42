@@ -6,7 +6,7 @@
 /*   By: niabraha <niabraha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 15:52:33 by niabraha          #+#    #+#             */
-/*   Updated: 2024/12/19 13:17:33 by niabraha         ###   ########.fr       */
+/*   Updated: 2025/01/07 15:01:40 by niabraha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 class PhoneBook {
 	private:
-	Contact _phoneDirectory[3];
+	Contact _phoneDirectory[8];
 	int _totalContact;
 	int _tmpContact;
 
