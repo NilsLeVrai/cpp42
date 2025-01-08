@@ -6,7 +6,7 @@
 /*   By: niabraha <niabraha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 15:45:45 by niabraha          #+#    #+#             */
-/*   Updated: 2025/01/08 16:59:25 by niabraha         ###   ########.fr       */
+/*   Updated: 2025/01/08 17:03:59 by niabraha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,17 +58,13 @@ void Harl::complain( std::string level) {
 	switch (findLevel) 
 	{
 		case 0:
-			Harl::_debug();
-			break ;
+			this->_debug();
 		case 1:
-			Harl::_info();
-			break ;
+			this->_info();
 		case 2:
-			Harl::_warning();
-			break ;
+			this->_warning();
 		case 3:
-			Harl::_error();
-			break ;
+			this->_error();
 		default:
 			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 			break ;
