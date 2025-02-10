@@ -6,7 +6,7 @@
 /*   By: niabraha <niabraha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 17:54:33 by niabraha          #+#    #+#             */
-/*   Updated: 2025/01/07 17:58:00 by niabraha         ###   ########.fr       */
+/*   Updated: 2025/02/10 12:44:38 by niabraha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,37 @@
 
 void replace(std::string filename, std::string s1, std::string s2)
 {
-    std::ofstream outfile;
+    std::ifstream infile(filename.c_str());
+    std::ofstream outfile((filename + ".replace").c_str());
+    std::string line;
     std::string::size_type pos;
 
-    outfile.open((filename + ".replace").c_str());
-    for (std::string::size_type i = 0; i < filename.length(); i++) {
-        pos = filename.find(s1, i);
-        if (pos != std::string::npos) {
-            outfile << filename.substr(i, pos - i) << s2;
-            i = pos + s1.length() - 1;
-        } else {
-            outfile << filename[i];
-        }
+    if (!infile)
+    {
+        std::cerr << "Couldn't open file for reading." << std::endl;
+        return;
     }
+
+    while (std::getline(infile, line))
+    {
+        for (std::string::size_type i = 0; i < line.length(); )
+        {
+            pos = line.find(s1, i);
+            if (pos != std::string::npos)
+            {
+                outfile << line.substr(i, pos - i) << s2;
+                i = pos + s1.length();
+            }
+            else
+            {
+                outfile << line.substr(i);
+                break;
+            }
+        }
+        outfile << std::endl;
+    }
+
+    infile.close();
     outfile.close();
 }
 
