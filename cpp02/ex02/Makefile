@@ -6,7 +6,7 @@ INCLUDES = -I ./includes/
 
 SRC_DIR = .
 
-SOURCES = main.cpp 
+SOURCES = main.cpp Fixed.cpp
 	
 OBJECTS = $(SOURCES:.cpp=.o)
 
