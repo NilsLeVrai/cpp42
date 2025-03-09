@@ -3,24 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: niabraha <niabraha@student.42.fr>          +#+  +:+       +#+        */
+/*   By: niabraha <niabraha@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 17:03:04 by niabraha          #+#    #+#             */
-/*   Updated: 2025/02/28 12:23:17 by niabraha         ###   ########.fr       */
+/*   Updated: 2025/03/09 23:08:08 by niabraha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+#include "Point.hpp"
+
+bool bsp( Point const a, Point const b, Point const c, Point const point);
 
 int main( void ) {
-	Fixed a;
-	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
-	std::cout << b << std::endl;
-	std::cout << Fixed::max( a, b ) << std::endl;
-	return 0;
+
+	Point a(2, 6);
+	Point b(-2, 3);
+	Point c(0, 4);
+	Point d(0, 0);
+
+	std::cout << bsp(a, b, c, d) << std::endl;
+	std::cout << bsp(c, b, c, a) << std::endl;
 }
