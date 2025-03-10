@@ -6,7 +6,7 @@
 /*   By: niabraha <niabraha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 15:45:45 by niabraha          #+#    #+#             */
-/*   Updated: 2025/03/10 11:18:47 by niabraha         ###   ########.fr       */
+/*   Updated: 2025/03/10 11:36:45 by niabraha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void Harl::complain( std::string level) {
 	std::string messages[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 	size_t findLevel = -1;
 
-	for (int i = 0; i <= 4; i++) {
+	for (int i = -1; i < 4; i++) {
 		if (messages[i] == level) {
 			findLevel = i;
 			break ;
