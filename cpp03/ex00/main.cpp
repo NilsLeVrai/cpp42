@@ -6,7 +6,7 @@
 /*   By: niabraha <niabraha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 15:14:17 by niabraha          #+#    #+#             */
-/*   Updated: 2025/03/24 17:35:41 by niabraha         ###   ########.fr       */
+/*   Updated: 2025/03/24 17:58:13 by niabraha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,35 +18,16 @@ int main(int argc, char **argv, char **envp)
 	(void)argv;
 	(void)envp;
 
-	ClapTrap john;
-	john.setName("John");
+	ClapTrap Gontran;
+	Gontran.setName("Gontran");
 
-	ClapTrap bertrand("Bertrand");
-	john.attack(bertrand.getName());
-	john.takeDamage(5);
+	ClapTrap Clotaire("Clotaire");
+	Gontran.attack(Clotaire.getName());
+	Gontran.takeDamage(5);
 
-	ClapTrap jp = john;
-	jp.setName("JP");
-	john.takeDamage(5);
-	jp.beRepaired(50);
-	jp.beRepaired(50);
-	jp.takeDamage(9);
-
-	ClapTrap fred(jp);
-	fred.setName("Fred");
-	fred.beRepaired(10);
-	fred.takeDamage(500);
-	fred.beRepaired(500);
-	fred.takeDamage(9);
-	fred.takeDamage(9);
-
-	ClapTrap jessy;
-	jessy = jp;
-	jessy.setName("Jessy");
-	jessy.takeDamage(1);
-
-	for (int i = 0; i < 12; i++)
-		bertrand.attack("Dans le vide");
-
+	Clotaire.attack(Gontran.getName());
+	Clotaire.takeDamage(5);
+	Clotaire.beRepaired(5);
+	
 	return (0);
 }
