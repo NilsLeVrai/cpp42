@@ -6,21 +6,47 @@
 /*   By: niabraha <niabraha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 15:14:17 by niabraha          #+#    #+#             */
-/*   Updated: 2025/03/13 16:09:01 by niabraha         ###   ########.fr       */
+/*   Updated: 2025/03/24 17:35:41 by niabraha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Claptrap.hpp"
 
-int main()
+int main(int argc, char **argv, char **envp)
 {
-	ClapTrap claptrap("Claptrap");
-	ClapTrap claptrap2(claptrap);
-	ClapTrap claptrap3("Claptrap3");
+	(void)argc;
+	(void)argv;
+	(void)envp;
 
-	claptrap.attack("target");
-	claptrap2.attack("target");
-	claptrap3.attack("target");
+	ClapTrap john;
+	john.setName("John");
 
-	return 0;
+	ClapTrap bertrand("Bertrand");
+	john.attack(bertrand.getName());
+	john.takeDamage(5);
+
+	ClapTrap jp = john;
+	jp.setName("JP");
+	john.takeDamage(5);
+	jp.beRepaired(50);
+	jp.beRepaired(50);
+	jp.takeDamage(9);
+
+	ClapTrap fred(jp);
+	fred.setName("Fred");
+	fred.beRepaired(10);
+	fred.takeDamage(500);
+	fred.beRepaired(500);
+	fred.takeDamage(9);
+	fred.takeDamage(9);
+
+	ClapTrap jessy;
+	jessy = jp;
+	jessy.setName("Jessy");
+	jessy.takeDamage(1);
+
+	for (int i = 0; i < 12; i++)
+		bertrand.attack("Dans le vide");
+
+	return (0);
 }
