@@ -6,8 +6,8 @@ INCLUDES = -I ./includes/
 
 SRC_DIR = .
 
-SOURCES = main.cpp \
-			Claptrap.cpp
+SOURCES = Claptrap.cpp \
+			main.cpp
 	
 OBJECTS = $(SOURCES:.cpp=.o)
 

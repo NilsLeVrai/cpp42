@@ -1,33 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: niabraha <niabraha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/06 15:14:17 by niabraha          #+#    #+#             */
-/*   Updated: 2025/03/24 17:59:25 by niabraha         ###   ########.fr       */
+/*   Created: 2025/03/24 18:00:33 by niabraha          #+#    #+#             */
+/*   Updated: 2025/03/24 18:03:58 by niabraha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Claptrap.hpp"
+#include "ScavTrap.hpp"
 
-int main(int argc, char **argv, char **envp)
-{
-	(void)argc;
-	(void)argv;
-	(void)envp;
-
-	ClapTrap Gontran;
-	Gontran.setName("Gontran");
-
-	ClapTrap Clotaire("Clotaire");
-	Gontran.attack(Clotaire.getName());
-	Gontran.takeDamage(5);
-
-	Clotaire.attack(Gontran.getName());
-	Clotaire.takeDamage(5);
-	Clotaire.beRepaired(5);
-	
-	return (0);
-}
+ScavTrap::ScavTrap() : _hit_points(100), _max_hit_points(100), _energy_points(50)
