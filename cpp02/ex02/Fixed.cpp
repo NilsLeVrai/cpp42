@@ -55,7 +55,7 @@ void Fixed::setRawBits(int const raw) {
 }
 
 float Fixed::toFloat( void ) const {
-	std::cout << "toFloat member function called" << std::endl;
+	//std::cout << "toFloat member function called" << std::endl;
 	return (float)this->_value / (1 << Fixed::_fractional_bits);
 }
 
@@ -141,19 +141,19 @@ Fixed Fixed::operator--(int) {
 }
 
 Fixed &Fixed::min(Fixed &lhs, Fixed &rhs) {
-	return lhs < rhs ? lhs : rhs;
+	return lhs.getRawBits() < rhs.getRawBits() ? lhs : rhs;
 }
 
 const Fixed &Fixed::min(const Fixed &lhs, const Fixed &rhs) {
-	return lhs < rhs ? lhs : rhs;
+	return lhs.getRawBits() < rhs.getRawBits() ? lhs : rhs;
 }
 
 Fixed &Fixed::max(Fixed &lhs, Fixed &rhs) {
-	return lhs > rhs ? lhs : rhs;
+	return lhs.getRawBits() > rhs.getRawBits() ? lhs : rhs;
 }
 
 const Fixed &Fixed::max(const Fixed &lhs, const Fixed &rhs) {
-	return lhs > rhs ? lhs : rhs;
+	return lhs.getRawBits() > rhs.getRawBits() ? lhs : rhs;
 }
 
 std::ostream& operator<<(std::ostream& os, const Fixed& fixed) {

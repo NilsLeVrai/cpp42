@@ -21,7 +21,7 @@ class Point {
 		Point &operator=(const Point &src);
 		~Point();
 		Point(const float x, const float y);
-		Point(const Fixed x, const Fixed y);
+		Point(const Fixed &x, const Fixed &y);
 		float getX() const;
 		float getY() const;
 		bool operator==(const Point &rhs) const;

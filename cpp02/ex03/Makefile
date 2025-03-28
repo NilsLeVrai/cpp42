@@ -7,7 +7,9 @@ INCLUDES = -I ./includes/
 SRC_DIR = .
 
 SOURCES = main.cpp \
-			Fixed.cpp
+			Fixed.cpp \
+			bsp.cpp \
+			Point.cpp
 	
 OBJECTS = $(SOURCES:.cpp=.o)
 

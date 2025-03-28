@@ -15,15 +15,45 @@
 int main( void ) {
 	
 	Fixed a;
-	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+	Fixed b;
+	Fixed c( a );
+	Fixed d(0.1f);
+	Fixed e(6);
+	Fixed f(8);
 	
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
-	std::cout << b << std::endl;
-	std::cout << Fixed::max( a, b ) << std::endl;
-	
+	a = 6;
+	b = 8;
+
+	std::cout << "a is " << a << std::endl;
+	std::cout << "b is " << b << std::endl;
+	std::cout << "c is " << c << std::endl;
+	std::cout << "d is " << d << std::endl;
+	std::cout << "e is " << e << std::endl;
+
+	std::cout << "a + b = " << a + b << std::endl;
+	std::cout << "a > b = " << (a > b) << std::endl;
+	std::cout << "a < b = " << (a < b) << std::endl;
+	std::cout << "f >= b = " << (f >= b) << std::endl;
+	std::cout << "f <= b = " << (f <= b) << std::endl;
+	std::cout << "f == b = " << (f == b) << std::endl;
+	std::cout << "f != b = " << (f != b) << std::endl;
+	std::cout << "d - e = " << d - e << std::endl;
+	std::cout << "d * e = " << d * e << std::endl;
+	std::cout << "d / e = " << d / e << std::endl;
+
+	std::cout << "++e = " << ++e << std::endl;
+	std::cout << "e++ = " << e++ << std::endl;
+	std::cout << "e = " << e << std::endl;
+
+	std::cout << "++d = " << ++d << std::endl;
+	std::cout << "d++ = " << d++ << std::endl;
+	std::cout << "d = " << d << std::endl;
+
+	std::cout << "max(a, b) = " << Fixed::max(a, b) << std::endl;
+	std::cout << "min(a, b) = " << Fixed::min(a, b) << std::endl;
+	std::cout << "max(d, e) = " << Fixed::max(d, e) << std::endl;
+	std::cout << "min(d, e) = " << Fixed::min(d, e) << std::endl;
+	std::cout << "max(f, b) = " << Fixed::max(f, b) << std::endl;
+	std::cout << "min(f, b) = " << Fixed::min(f, b) << std::endl;
 	return 0;
 }

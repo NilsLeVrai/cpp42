@@ -15,126 +15,126 @@
 int const Fixed::_fractional_bits = 8;
 
 Fixed::Fixed() : _value(0) {
-	std::cout << "Default constructor called" << std::endl;
+	//std::cout << "Default constructor called" << std::endl;
 }
 
 Fixed::Fixed(const Fixed &src) {
-	std::cout << "Copy constructor called" << std::endl;
+	//std::cout << "Copy constructor called" << std::endl;
 	*this = src;
 }
 
 Fixed &Fixed::operator=(const Fixed &src) {
-	std::cout << "Assignation operator called" << std::endl;
+	//std::cout << "Assignation operator called" << std::endl;
 	if (this != &src)
 		this->_value = src.getRawBits();
 	return *this;
 }
 
 Fixed::~Fixed() {
-	std::cout << "Destructor called" << std::endl;
+	//std::cout << "Destructor called" << std::endl;
 }
 
 Fixed::Fixed(const int value) {
-	std::cout << "Int constructor called" << std::endl;
+	//std::cout << "Int constructor called" << std::endl;
 	this->_value = value << Fixed::_fractional_bits;
 }
 
 Fixed::Fixed(const float value) {
-	std::cout << "Float constructor called" << std::endl;
+	//std::cout << "Float constructor called" << std::endl;
 	this->_value = roundf(value * (1 << Fixed::_fractional_bits));
 }
 
 int Fixed::getRawBits(void) const {
-	std::cout << "getRawBits member function called" << std::endl;
+	//std::cout << "getRawBits member function called" << std::endl;
 	return this->_value;
 }
 
 void Fixed::setRawBits(int const raw) {
-	std::cout << "setRawBits member function called" << std::endl;
+	//std::cout << "setRawBits member function called" << std::endl;
 	this->_value = raw;
 }
 
 float Fixed::toFloat( void ) const {
-	std::cout << "toFloat member function called" << std::endl;
+	//std::cout << "toFloat member function called" << std::endl;
 	return (float)this->_value / (1 << Fixed::_fractional_bits);
 }
 
 int Fixed::toInt( void ) const {
-	std::cout << "toInt member function called" << std::endl;
+	//std::cout << "toInt member function called" << std::endl;
 	return this->_value >> Fixed::_fractional_bits;
 }
 
 bool Fixed::operator>(const Fixed &rhs) const {
-	std::cout << "Comparison operator called >" << std::endl;
+	//std::cout << "Comparison operator called >" << std::endl;
 	return this->_value > rhs.getRawBits();
 }
 
 bool Fixed::operator<(const Fixed &rhs) const {
-	std::cout << "Comparison operator called <" << std::endl;
+	//std::cout << "Comparison operator called <" << std::endl;
 	return this->_value < rhs.getRawBits();
 }
 
 bool Fixed::operator>=(const Fixed &rhs) const {
-	std::cout << "Comparison operator called >=" << std::endl;
+	//std::cout << "Comparison operator called >=" << std::endl;
 	return this->_value >= rhs.getRawBits();
 }
 
 bool Fixed::operator<=(const Fixed &rhs) const {
-	std::cout << "Comparison operator called <=" << std::endl;
+	//std::cout << "Comparison operator called <=" << std::endl;
 	return this->_value <= rhs.getRawBits();
 }
 
 bool Fixed::operator==(const Fixed &rhs) const {
-	std::cout << "Comparison operator called ==" << std::endl;
+	//::cout << "Comparison operator called ==" << std::endl;
 	return this->_value == rhs.getRawBits();
 }
 
 bool Fixed::operator!=(const Fixed &rhs) const {
-	std::cout << "Comparison operator called !=" << std::endl;
+	//std::cout << "Comparison operator called !=" << std::endl;
 	return this->_value != rhs.getRawBits();
 }
 
 Fixed Fixed::operator+(const Fixed &rhs) const {
-	std::cout << "Addition operator called" << std::endl;
+	//std::cout << "Addition operator called" << std::endl;
 	return Fixed(this->toFloat() + rhs.toFloat());
 }
 
 Fixed Fixed::operator-(const Fixed &rhs) const {
-	std::cout << "Subtraction operator called" << std::endl;
+	//std::cout << "Subtraction operator called" << std::endl;
 	return Fixed(this->toFloat() - rhs.toFloat());
 }
 
 Fixed Fixed::operator*(const Fixed &rhs) const {
-	std::cout << "Multiplication operator called" << std::endl;
+	//std::cout << "Multiplication operator called" << std::endl;
 	return Fixed(this->toFloat() * rhs.toFloat());
 }
 
 Fixed Fixed::operator/(const Fixed &rhs) const {
-	std::cout << "Division operator called" << std::endl;
+	//std::cout << "Division operator called" << std::endl;
 	return Fixed(this->toFloat() / rhs.toFloat());
 }
 
 Fixed &Fixed::operator++() {
 	this->_value++;
-	std::cout << "Pre-incrementation operator called" << std::endl;
+	//std::cout << "Pre-incrementation operator called" << std::endl;
 	return *this;
 }
 
 Fixed Fixed::operator++(int) {
-	std::cout << "Post-incrementation operator called" << std::endl;
+	//std::cout << "Post-incrementation operator called" << std::endl;
 	Fixed tmp(*this);
 	operator++();
 	return tmp;
 }
 
 Fixed &Fixed::operator--() {
-	std::cout << "Pre-decrementation operator called" << std::endl;
+	//std::cout << "Pre-decrementation operator called" << std::endl;
 	this->_value--;
 	return *this;
 }
 
 Fixed Fixed::operator--(int) {
-	std::cout << "Post-decrementation operator called" << std::endl;
+	//std::cout << "Post-decrementation operator called" << std::endl;
 	Fixed tmp(*this);
 	operator--();
 	return tmp;
