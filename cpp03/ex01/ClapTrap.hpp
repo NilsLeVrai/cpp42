@@ -6,7 +6,7 @@
 /*   By: niabraha <niabraha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 15:14:22 by niabraha          #+#    #+#             */
-/*   Updated: 2025/03/24 17:41:50 by niabraha         ###   ########.fr       */
+/*   Updated: 2025/04/05 15:54:39 by niabraha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 class ClapTrap {
 
-	private:
+	protected:
 		int 		_hitPoints;
 		int 		_energyPoints;
 		int 		_attackDamage;
