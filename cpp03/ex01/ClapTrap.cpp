@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: niabraha <niabraha@student.42.fr>          +#+  +:+       +#+        */
+/*   By: niabraha <niabraha@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 15:12:35 by niabraha          #+#    #+#             */
-/*   Updated: 2025/04/05 17:13:47 by niabraha         ###   ########.fr       */
+/*   Updated: 2025/04/07 21:39:01 by niabraha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,23 +85,16 @@ void ClapTrap::takeDamage(unsigned int amount){
 }
 
 void ClapTrap::beRepaired(unsigned int amount){
-	if (_energyPoints > 0)
+	if (_hitPoints > 0 && _energyPoints > 0)
 	{
-		if (_hitPoints > 100)
-		{
-			std::cout << "\033[32mThat's too much Hit Points! Let's keep it to 100." << "\033[0m" << std::endl;
-			_hitPoints = 100;
-			std::cout << "\033[33mClapTrap " << _name << "\033[0m" << "\033[32m repairs itself to 100 points!\033[0m" << std::endl;
-		}
-		else
-		std::cout << "\033[33mClapTrap " << _name << "\033[0m" << "\033[32m repairs itself for " << amount << " points!\033[0m" << std::endl;
-	}
-	else
-	{
-		std::cout << "\033[33mClapTrap " << _name << "\033[0m" << "\033[32m has no energy left to be repaired.\033[0m" << std::endl;
+		std::cout << "\033[33mClapTrap " << _name << "\033[0m" << "\033[31m repairs itself for " << amount << " hit points!\033[0m" << std::endl;
 		_hitPoints += amount;
 		_energyPoints--;
 	}
+	else if (_hitPoints <= 0)
+		std::cout << "\033[33mClapTrap " << _name << "\033[0m" << "\033[31m has no hit points left\033[0m" << std::endl;
+	else
+		std::cout << "\033[33mClapTrap " << _name << "\033[0m" << "\033[31m has no energy points left\033[0m" << std::endl;
 }
 
 std::string ClapTrap::getName(){

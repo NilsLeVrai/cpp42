@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: niabraha <niabraha@student.42.fr>          +#+  +:+       +#+        */
+/*   By: niabraha <niabraha@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 15:14:17 by niabraha          #+#    #+#             */
-/*   Updated: 2025/04/05 17:09:29 by niabraha         ###   ########.fr       */
+/*   Updated: 2025/04/07 23:35:26 by niabraha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,26 @@
 #include "ScavTrap.hpp"
 
 int	main( void ) {
-	ClapTrap	clubyTrap("Cluby");
-	ScavTrap	ahansTrap("Ahans");
 
-	std::cout << std::endl;
-	ahansTrap.attack("itself");
-	ahansTrap.takeDamage(20);
-	ahansTrap.beRepaired(100);
-	ahansTrap.guardGate();
-	for (int i = 0; i < 8; ++i) {
-		clubyTrap.beRepaired(42);
-		ahansTrap.attack("Cluby");
-		clubyTrap.takeDamage(20);
+	ClapTrap Lisette("Lisette");
+	ScavTrap Zebulon("Zebulon");
+
+	Lisette.attack("Zebulon");
+	Lisette.takeDamage(3);
+	Lisette.attack("Zebulon");
+	Lisette.beRepaired(2);
+	Lisette.attack("Zebulon");
+	Zebulon.attack("Lisette");
+	Zebulon.takeDamage(3);
+
+	for (int i = 0; i < 52; i++)
+	{
+		Zebulon.attack("Lisette");
+		Zebulon.takeDamage(3);
 	}
-	ahansTrap.attack("Cluby");
-	ahansTrap.beRepaired(100);
-	clubyTrap.attack("Ahans");
-	ahansTrap.guardGate();
-	clubyTrap.attack("Ahans");
-	ahansTrap.takeDamage(1000);
-	ahansTrap.attack("Test");
-	std::cout << std::endl;
+	ScavTrap Zebulon2("Zebulon2");
+	Zebulon2.attack("Lisette");
+	Zebulon2.guardGate();
+	
 	return (0);
 }

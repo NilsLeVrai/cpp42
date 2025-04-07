@@ -1,4 +1,4 @@
-NAME = claptrap
+NAME = FragTrap
 CXX = c++
 CXXFLAGS = -std=c++98 -Wall -Werror -Wextra
 
@@ -6,8 +6,10 @@ INCLUDES = -I ./includes/
 
 SRC_DIR = .
 
-SOURCES = main.cpp \
-			Claptrap.cpp
+SOURCES = ClapTrap.cpp \
+			ScavTrap.cpp \
+			FragTrap.cpp \
+			main.cpp
 	
 OBJECTS = $(SOURCES:.cpp=.o)
 
