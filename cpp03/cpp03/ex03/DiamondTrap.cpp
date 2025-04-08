@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: niabraha <niabraha@student.42mulhouse.f    +#+  +:+       +#+        */
+/*   By: niabraha <niabraha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 23:14:07 by niabraha          #+#    #+#             */
-/*   Updated: 2025/04/07 23:27:21 by niabraha         ###   ########.fr       */
+/*   Updated: 2025/04/08 17:23:35 by niabraha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
