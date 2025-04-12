@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
+/*   WrongAAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: niabraha <niabraha@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,28 +12,28 @@
 
 #include "WrongAnimal.hpp"
 
-WrongAnimal::WrongAnimal() : _type("WrongAnimal")
+WrongAAnimal::WrongAAnimal() : _type("WrongAAnimal")
 {
-	std::cout << "Default constructor called for WrongAnimal" << std::endl;
+	std::cout << "Default constructor called for WrongAAnimal" << std::endl;
 }
-WrongAnimal::WrongAnimal(std::string type) : _type(type)
+WrongAAnimal::WrongAAnimal(std::string type) : _type(type)
 {
-	std::cout << "Constructor called for WrongAnimal with type: " << type << std::endl;
+	std::cout << "Constructor called for WrongAAnimal with type: " << type << std::endl;
 }
-WrongAnimal::WrongAnimal(const WrongAnimal &src)
+WrongAAnimal::WrongAAnimal(const WrongAAnimal &src)
 {
-	std::cout << "Copy constructor called for WrongAnimal" << std::endl;
+	std::cout << "Copy constructor called for WrongAAnimal" << std::endl;
 	*this = src;
 }
 
-WrongAnimal::~WrongAnimal()
+WrongAAnimal::~WrongAAnimal()
 {
-	std::cout << "Destructor called for WrongAnimal" << std::endl;
+	std::cout << "Destructor called for WrongAAnimal" << std::endl;
 }
 
-WrongAnimal &WrongAnimal::operator=(const WrongAnimal &rhs)
+WrongAAnimal &WrongAAnimal::operator=(const WrongAAnimal &rhs)
 {
-	std::cout << "Assignment operator called for WrongAnimal" << std::endl;
+	std::cout << "Assignment operator called for WrongAAnimal" << std::endl;
 	if (this != &rhs)
 	{
 		this->_type = rhs._type;
@@ -41,12 +41,12 @@ WrongAnimal &WrongAnimal::operator=(const WrongAnimal &rhs)
 	return *this;
 }
 
-void WrongAnimal::makeSound() const
+void WrongAAnimal::makeSound() const
 {
-	std::cout << "WrongAnimal sound" << std::endl;
+	std::cout << "WrongAAnimal sound" << std::endl;
 }
 
-std::string WrongAnimal::getType() const
+std::string WrongAAnimal::getType() const
 {
 	return this->_type;
 }

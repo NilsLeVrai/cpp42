@@ -1,4 +1,4 @@
-NAME = Animal
+NAME = Last
 CXX = c++
 CXXFLAGS = -std=c++98 -Wall -Werror -Wextra
 
@@ -7,12 +7,13 @@ INCLUDES = -I ./includes/
 SRC_DIR = .
 
 SOURCES =  main.cpp \
-			Animal.cpp \
+			AAnimal.cpp \
 			Dog.cpp \
 			Cat.cpp \
 			WrongAnimal.cpp \
 			WrongCat.cpp \
-			WrongDog.cpp 
+			WrongDog.cpp \
+			Brain.cpp
 	
 OBJECTS = $(SOURCES:.cpp=.o)
 

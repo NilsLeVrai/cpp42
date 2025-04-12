@@ -1,4 +1,4 @@
-NAME = Animal
+NAME = Fire
 CXX = c++
 CXXFLAGS = -std=c++98 -Wall -Werror -Wextra
 
@@ -12,7 +12,8 @@ SOURCES =  main.cpp \
 			Cat.cpp \
 			WrongAnimal.cpp \
 			WrongCat.cpp \
-			WrongDog.cpp 
+			WrongDog.cpp \
+			Brain.cpp
 	
 OBJECTS = $(SOURCES:.cpp=.o)
 

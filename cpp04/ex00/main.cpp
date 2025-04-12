@@ -3,16 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: niabraha <niabraha@student.42.fr>          +#+  +:+       +#+        */
+/*   By: niabraha <niabraha@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/31 14:40:01 by niabraha          #+#    #+#             */
-/*   Updated: 2025/04/05 17:29:26 by niabraha         ###   ########.fr       */
+/*   Updated: 2025/04/12 16:55:00 by niabraha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
+#include <iostream>
 
 int main()
 {
@@ -66,6 +69,17 @@ int main()
 	delete meta;
 	delete j;
 	delete i;
+	
+	//WrongThings
+
+	const WrongAnimal* wrong = new WrongAnimal();
+	const WrongCat* wrongcat = new WrongCat();
+	std::cout << wrong->getType() << " le wrong animal " << std::endl;
+	std::cout << wrongcat->getType() << " le wrong cat " << std::endl;
+	wrong->makeSound();
+	wrongcat->makeSound();
+	delete wrong;
+	delete wrongcat;
 	
 	return 0;
 }
