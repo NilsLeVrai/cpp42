@@ -6,7 +6,7 @@
 /*   By: niabraha <niabraha@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/31 14:33:14 by niabraha          #+#    #+#             */
-/*   Updated: 2025/04/12 17:42:06 by niabraha         ###   ########.fr       */
+/*   Updated: 2025/04/13 23:27:21 by niabraha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ Cat::~Cat() {
 Cat &Cat::operator=(const Cat &rhs) {
 	if (this != &rhs) {
 		this->_type = rhs._type;
+		*this->_brain = *rhs._brain;
 	}
 	return *this;
 }

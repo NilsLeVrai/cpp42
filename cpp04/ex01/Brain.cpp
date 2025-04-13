@@ -6,7 +6,7 @@
 /*   By: niabraha <niabraha@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 17:00:26 by niabraha          #+#    #+#             */
-/*   Updated: 2025/04/12 17:11:16 by niabraha         ###   ########.fr       */
+/*   Updated: 2025/04/13 23:10:13 by niabraha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 Brain::Brain()
 {
 	std::cout << "Brain default constructor called" << std::endl;
-	this->_ideas[0] = "I am a brain";
+	this->_ideas[0] = "default idea";
 }
 
 Brain::Brain(const Brain &src)
@@ -50,5 +50,5 @@ std::string Brain::getIdea(int index) const
 {
 	if (index >= 0 && index < 100)
 		return this->_ideas[index];
-	return "";
+	return "Invalid index";
 }
