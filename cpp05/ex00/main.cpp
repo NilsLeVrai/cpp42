@@ -6,7 +6,7 @@
 /*   By: niabraha <niabraha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 18:31:11 by niabraha          #+#    #+#             */
-/*   Updated: 2025/05/12 17:00:56 by niabraha         ###   ########.fr       */
+/*   Updated: 2025/05/20 14:11:17 by niabraha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,31 +18,59 @@
 int main()
 {
     try {
-        Bureaucrat a("niabraha", 1); // No exception
-        std::cout << a.getName() << " " << a.getGrade() << std::endl;
+		std::cout << WHITE BOLD "Basic tests until too high grade\n";
+        Bureaucrat a("niabraha", 1);
+        std::cout << a.getName() << CYAN BOLD << ", bureaucrat grade " << GREEN BOLD << a.getGrade() << RESET << std::endl;
+        
+		Bureaucrat b("niabraha", 150);
+        std::cout << b.getName() << CYAN BOLD  << ", bureaucrat grade " << GREEN BOLD << b.getGrade() << RESET << std::endl;
 
-        Bureaucrat b("niabraha", 150); // No exception
-        std::cout << b.getName() << " " << b.getGrade() << std::endl;
-
-        Bureaucrat c("niabraha", 100); // No exception
-        std::cout << c.getName() << " " << c.getGrade() << std::endl;
+        Bureaucrat c("niabraha", 100);
+        std::cout << c.getName() << CYAN BOLD << ", bureaucrat grade " << GREEN BOLD << c.getGrade() << RESET << std::endl;
 
         Bureaucrat d("niabraha", -50);  // Exception : "Grade too high"
-        std::cout << d.getName() << " " << d.getGrade() << std::endl;
+        std::cout << d.getName() << CYAN BOLD << ", bureaucrat grade " << GREEN BOLD << d.getGrade() << RESET << std::endl;
+	}
+	catch (const std::exception &error) {
+		std::cerr << YELLOW BOLD<< "Exception caught: " << RESET << error.what() << '\n';
+	}
+	try {
+		std::cout << WHITE BOLD "\nBasic tests until too low grade\n";
+        Bureaucrat e("niabraha", 10);
+        std::cout << e.getName() << CYAN BOLD << ", bureaucrat grade " << GREEN BOLD << e.getGrade() << RESET << std::endl;
 
-        Bureaucrat e("niabraha", 2147456456);  // Exception : "Grade too high"
-        std::cout << e.getName() << " " << e.getGrade() << std::endl;
+        Bureaucrat f("niabraha", 151);  // Exception : "Grade too low"
+        std::cout << f.getName() << CYAN BOLD << ", bureaucrat grade " << GREEN BOLD << f.getGrade() << RESET << std::endl;
+	}
+	catch (const std::exception &error) {
+		std::cerr << YELLOW BOLD<< "Exception caught: " << RESET << error.what() << '\n';
+	}
+	
+	try {
+		std::cout << WHITE BOLD "\nIncrementing until too high\n";
+        Bureaucrat j("niabraha", 3);
+		j.incrementGrade();
+		std::cout << j.getName() << CYAN BOLD << ", bureaucrat grade " << GREEN BOLD << j.getGrade() << RESET << std::endl;
+		
+		 Bureaucrat k("niabraha", 1); // Exception : "Grade too high" 1 --> 0
+		k.incrementGrade();
+		std::cout << k.getName() << CYAN BOLD << ", bureaucrat grade " << GREEN BOLD << k.getGrade() << RESET << std::endl;
+	}
+	catch (const std::exception &error) {
+		std::cerr << YELLOW BOLD<< "Exception caught: " << RESET << error.what() << '\n';
+	}
 
-        Bureaucrat f("niabraha", 0);  // Exception : "Grade too high"
-        std::cout << f.getName() << " " << f.getGrade() << std::endl;
-
-        Bureaucrat g("niabraha", 151);  // Exception : "Grade too low"
-        std::cout << g.getName() << " " << g.getGrade() << std::endl;
-
-    } catch (const std::out_of_range &e) {
-        std::cerr << "Exception caught: " << e.what() << '\n';
-    }
-
-    return 0;
+	try {
+		std::cout << WHITE BOLD "\nIncrementing until too low\n";
+		Bureaucrat m("niabraha", 15);
+		m.decrementGrade();
+		std::cout << m.getName() << CYAN BOLD << ", bureaucrat grade " << GREEN BOLD << m.getGrade() << RESET << std::endl;
+		
+		Bureaucrat l("niabraha", 150);
+		l.decrementGrade();
+		std::cout << l.getName() << CYAN BOLD << ", bureaucrat grade " << GREEN BOLD << l.getGrade() << RESET << std::endl;
+	}
+	catch (const std::exception &error) {
+		std::cerr << YELLOW BOLD<< "Exception caught: " << RESET << error.what() << '\n';
+	}
 }
-
