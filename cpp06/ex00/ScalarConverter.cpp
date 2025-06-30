@@ -85,10 +85,10 @@ void ScalarConverter::convert(const std::string &src, int i, const std::string t
 			if (std::isspace(remaining[j]) || remaining[j] == '\0') {
 				continue;
 			}
-			std::cout << RED BOLD "Conversion error: Extra characters after integer" RESET << std::endl;
+			std::cout << RED BOLD "Conversion error: Extra characters remaining after integer" RESET << std::endl;
 			return;
 		}
-		std::cout << BLUE BOLD "int detected" RESET << std::endl;
+		std::cout << BLUE BOLD "Int detected" RESET << std::endl;
 		
 		f = static_cast<float>(n);
 		d = static_cast<double>(n);
