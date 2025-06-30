@@ -42,6 +42,7 @@ void ScalarConverter::convert(const std::string &src, int i, const std::string t
 			return ;
 		}
 		c = src[tmp];
+		std::cout << BLUE BOLD "char detected" RESET << std::endl;
 		if (std::isprint(c))
 			std::cout << "char   : '" << c << "'" << std::endl;
 		else
@@ -57,11 +58,11 @@ void ScalarConverter::convert(const std::string &src, int i, const std::string t
 		std::cout << "double :" << " " << d << std::endl;
 	}
 	else if (type == "double") {
-		std::cout << "double\n" << std::endl;
+		std::cout << BLUE BOLD "double detected" RESET << std::endl;
 	}
 
 	else if (type == "float") {
-		std::cout << "float\n" << std::endl;
+		std::cout << BLUE BOLD "float detected" RESET << std::endl;
 	}
 
 	else if (type == "int") {
@@ -69,33 +70,28 @@ void ScalarConverter::convert(const std::string &src, int i, const std::string t
 			convert(src, i, "double");
 			return;
 		}
-
+		
 		std::istringstream iss(src);
 		iss >> n;
-
+		
 		if (iss.fail()) {
-			std::cout << "char   : impossible" << std::endl;
-			std::cout << "int    : impossible" << std::endl;
-			std::cout << "float  : impossible" << std::endl;
-			std::cout << "double : impossible" << std::endl;
+			std::cout << RED BOLD "Conversion error: Not a valid integer" RESET << std::endl;
 			return;
 		}
-
+		
 		std::string remaining;
 		std::getline(iss, remaining);
 		for (size_t j = 0; j < remaining.length(); ++j) {
 			if (remaining[j] != ' ' && remaining[j] != '\t') {
-				std::cout << "char   : impossible" << std::endl;
-				std::cout << "int    : impossible" << std::endl;
-				std::cout << "float  : impossible" << std::endl;
-				std::cout << "double : impossible" << std::endl;
+				std::cout << RED BOLD "Conversion error: Not a valid integer" RESET << std::endl;
 				return;
 			}
 		}
-
+		std::cout << BLUE BOLD "int detected" RESET << std::endl;
+		
 		f = static_cast<float>(n);
 		d = static_cast<double>(n);
-
+		
 		std::cout << "char   : impossible" << std::endl;
 		std::cout << "int    : " << n << std::endl;
 		std::cout << std::fixed << std::showpoint << std::setprecision(1);
