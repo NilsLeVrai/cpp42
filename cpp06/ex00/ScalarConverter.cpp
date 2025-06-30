@@ -28,28 +28,22 @@ void ScalarConverter::convert(const std::string &src, int i, const std::string t
 
 	if (type == "char") {
 		char c;
-		int len = 0;
+		int tmp = i;
 
 		if (src == "nanf" || src == "+inff" || src == "-inff") {
 			convert(src, i, "float");
 			return;
 		}
-
-		while (src[i + len])
-			len++;
-		if (len > 1) {
-			std::cout << "char   :"   << " impossible" << std::endl;
-			std::cout << "int    :"    << " impossible" << std::endl;
-			std::cout << "float  :"  << " impossible" << std::endl;
-			std::cout << "double :" << " impossible" << std::endl;
-			return;
+		i++;
+		while (std::isspace(src[i]))
+			i++;
+		if (src[i] != '\0') {
+			std::cout << "Not a valid char" << std::endl;
+			return ;
 		}
-
-		c = src[i];
-
-		std::cout << "char   :";
+		c = src[tmp];
 		if (std::isprint(c))
-			std::cout << " '" << c << "'" << std::endl;
+			std::cout << "char   : '" << c << "'" << std::endl;
 		else
 			std::cout << " Non displayable" << std::endl;
 
