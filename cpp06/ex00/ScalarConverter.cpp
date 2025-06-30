@@ -82,10 +82,11 @@ void ScalarConverter::convert(const std::string &src, int i, const std::string t
 		std::string remaining;
 		std::getline(iss, remaining);
 		for (size_t j = 0; j < remaining.length(); ++j) {
-			if (remaining[j] != ' ' && remaining[j] != '\t') {
-				std::cout << RED BOLD "Conversion error: Not a valid integer" RESET << std::endl;
-				return;
+			if (std::isspace(remaining[j]) || remaining[j] == '\0') {
+				continue;
 			}
+			std::cout << RED BOLD "Conversion error: Extra characters after integer" RESET << std::endl;
+			return;
 		}
 		std::cout << BLUE BOLD "int detected" RESET << std::endl;
 		
