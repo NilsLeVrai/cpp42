@@ -3,7 +3,6 @@
 #include <ctime>
 
 int main() {
-    std::srand(std::time(NULL));
 
     Intern  intern;
     Bureaucrat alice("Alice", 1);
@@ -39,7 +38,6 @@ int main() {
             delete form;
         }
     }
-    std::cout << WHITE BOLD << "\n===== End of Intern tests =====" << RESET << std::endl;
 	std::cout << WHITE BOLD << "\n===== Subject test =====" << RESET << std::endl;
 
     {

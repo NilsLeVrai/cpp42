@@ -33,6 +33,14 @@ class Form {
 			public:
 				const char* what() const throw();
 		};
+		
+		class AlreadySignedException : public std::exception {
+			public:
+				const char* what() const throw() {
+					return "Form is already signed";
+				}
+		};
+
 };
 
 std::ostream &operator<<(std::ostream &os, const Form &form);

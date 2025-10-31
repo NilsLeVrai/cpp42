@@ -17,7 +17,6 @@ Serializer &Serializer::operator=(const Serializer &src) {
 
 	if (this == &src)
 		return (*this);
-	//truc
 	return (*this);
 }
 
