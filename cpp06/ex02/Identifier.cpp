@@ -1,0 +1,79 @@
+#include "A.hpp"
+#include "B.hpp"
+#include "C.hpp"
+#include "Base.hpp"
+#include <cstdlib>
+#include <ctime>
+#include <iostream>
+
+Base* generate() {
+	int random = std::rand() % 3;
+	switch (random) {
+		case 0:
+			return new A();
+		case 1:
+			return new B();
+		case 2:
+			return new C();
+		default:
+			return nullptr;
+	}
+}
+
+void identify(Base& p) {
+	try {
+		dynamic_cast<A&>(p);
+		std::cout << "A" << std::endl;
+		return;
+	} catch (std::bad_cast&) {}
+
+	try {
+		dynamic_cast<B&>(p);
+		std::cout << "B" << std::endl;
+		return;
+	} catch (std::bad_cast&) {}
+
+	try {
+		dynamic_cast<C&>(p);
+		std::cout << "C" << std::endl;
+		return;
+	} catch (std::bad_cast&) {}
+
+	std::cout << "Unknown type" << std::endl;
+}
+
+void identify(Base* p) {
+
+	if (!p) {
+		std::cout << "Null pointer provided" << std::endl;
+		return;
+	}
+	if (dynamic_cast<A*>(p)) {
+		std::cout << "A" << std::endl;
+	} else if (dynamic_cast<B*>(p)) {
+		std::cout << "B" << std::endl;
+	} else if (dynamic_cast<C*>(p)) {
+		std::cout << "C" << std::endl;
+	} else {
+		std::cout << "Unknown type" << std::endl;
+	}
+}
+
+int main() {
+	std::srand(static_cast<unsigned int>(std::time(0)));
+
+	Base* base = generate();
+	if (!base) {
+		std::cerr << "Failed to generate a Base instance." << std::endl;
+		return 1;
+	}
+
+	std::cout << "Identifying by pointer:" << std::endl;
+	identify(base);
+
+	std::cout << "Identifying by reference:" << std::endl;
+	identify(*base);
+
+	delete base;
+	return 0;
+}
