@@ -63,7 +63,7 @@ void identify(Base* p) {
 }
 
 int main() {
-	std::srand(static_cast<unsigned int>(std::time(0)));
+	std::srand(static_cast<unsigned int>(std::time(NULL)));
 
 	Base* base = generate();
 	if (!base) {
