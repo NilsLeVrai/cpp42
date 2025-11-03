@@ -2,7 +2,7 @@
 #include "B.hpp"
 #include "C.hpp"
 #include "Base.hpp"
-#include <cstdlib>
+#include <stdlib.h>
 #include <ctime>
 #include <iostream>
 
@@ -16,7 +16,7 @@ Base* generate() {
 		case 2:
 			return new C();
 		default:
-			return nullptr;
+			return NULL;
 	}
 }
 	
@@ -26,21 +26,21 @@ void identify(Base& p) {
 		(void)a;
 		std::cout << "A" << std::endl;
 		return;
-	} catch (std::bad_cast&) {}
+	} catch (std::exception& e) {}
 
 	try {
 		B& b = dynamic_cast<B&>(p);
 		(void)b;
 		std::cout << "B" << std::endl;
 		return;
-	} catch (std::bad_cast&) {}
+	} catch (std::exception& e) {}
 
 	try {
 		C& c = dynamic_cast<C&>(p);
 		(void)c;
 		std::cout << "C" << std::endl;
 		return;
-	} catch (std::bad_cast&) {}
+	} catch (std::exception& e) {}
 
 	std::cout << "Unknown type" << std::endl;
 }
