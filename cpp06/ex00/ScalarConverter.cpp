@@ -53,7 +53,6 @@ void ScalarConverter::convert(const std::string &literal)
 		return;
 	}
 
-	errno = 0;
 	char *end;
 	double d = std::strtod(literal.c_str(), &end);
 
