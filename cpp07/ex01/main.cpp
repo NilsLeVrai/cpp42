@@ -2,7 +2,6 @@
 
 int main()
 {
-	srand((time(0)));
 
 	//Int array test
 
