@@ -20,7 +20,7 @@ int main()
         std::cout << d.getName() << CYAN BOLD << ", bureaucrat grade " << GREEN BOLD << d.getGrade() << RESET << std::endl;
 	}
 	catch (const std::exception &error) {
-		std::cerr << YELLOW BOLD<< "Exception caught: " << RESET << error.what() << '\n';
+		std::cout << YELLOW BOLD<< "Exception caught: " << RESET << error.what() << '\n';
 	}
 	try {
 		std::cout << WHITE BOLD "\nBasic tests until too low grade\n";
@@ -31,7 +31,7 @@ int main()
         std::cout << f.getName() << CYAN BOLD << ", bureaucrat grade " << GREEN BOLD << f.getGrade() << RESET << std::endl;
 	}
 	catch (const std::exception &error) {
-		std::cerr << YELLOW BOLD<< "Exception caught: " << RESET << error.what() << '\n';
+		std::cout << YELLOW BOLD<< "Exception caught: " << RESET << error.what() << '\n';
 	}
 	
 	try {
@@ -45,7 +45,7 @@ int main()
 		std::cout << k.getName() << CYAN BOLD << ", bureaucrat grade " << GREEN BOLD << k.getGrade() << RESET << std::endl;
 	}
 	catch (const std::exception &error) {
-		std::cerr << YELLOW BOLD<< "Exception caught: " << RESET << error.what() << '\n';
+		std::cout << YELLOW BOLD<< "Exception caught: " << RESET << error.what() << '\n';
 	}
 
 	try {
@@ -59,6 +59,6 @@ int main()
 		std::cout << l.getName() << CYAN BOLD << ", bureaucrat grade " << GREEN BOLD << l.getGrade() << RESET << std::endl;
 	}
 	catch (const std::exception &error) {
-		std::cerr << YELLOW BOLD<< "Exception caught: " << RESET << error.what() << '\n';
+		std::cout << YELLOW BOLD<< "Exception caught: " << RESET << error.what() << '\n';
 	}
 }

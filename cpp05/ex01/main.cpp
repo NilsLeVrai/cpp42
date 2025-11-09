@@ -19,18 +19,18 @@ int main()
 			Form invalidHigh("Invalid High", 0, 10); // Exception : "Grade too high"
 		}
 		catch (const std::exception &error) {
-			std::cerr << YELLOW BOLD "Exception caught: " RESET << error.what() << std::endl;
+			std::cout << YELLOW BOLD "Exception caught: " RESET << error.what() << std::endl;
 		}
 
 		try {
 			Form invalidLow("Invalid Low", 160, 160); // Exception : "Grade too low"
 		}
 		catch (const std::exception &error) {
-			std::cerr << YELLOW BOLD "Exception caught: " RESET << error.what() << std::endl;
+			std::cout << YELLOW BOLD "Exception caught: " RESET << error.what() << std::endl;
 		}
 	}
 	catch (const std::exception &error) {
-		std::cerr << YELLOW BOLD "Exception caught: " RESET << error.what() << '\n';
+		std::cout << YELLOW BOLD "Exception caught: " RESET << error.what() << '\n';
 	}
 
 	std::cout << WHITE BOLD "\nSigning tests\n";
@@ -63,7 +63,7 @@ int main()
 		std::cout << permit << std::endl;
 	}
 	catch (const std::exception &error) {
-		std::cerr << YELLOW BOLD "Exception caught: " RESET << error.what() << '\n';
+		std::cout << YELLOW BOLD "Exception caught: " RESET << error.what() << '\n';
 	}
 
 	std::cout << WHITE BOLD "\nEdge cases\n" RESET;
@@ -76,7 +76,7 @@ int main()
 		std::cout << eliteForm << std::endl;
 	}
 	catch (const std::exception &error) {
-		std::cerr << YELLOW BOLD "Exception caught: " RESET << error.what() << '\n';
+		std::cout << YELLOW BOLD "Exception caught: " RESET << error.what() << '\n';
 	}
 
 
@@ -93,7 +93,7 @@ int main()
 		std::cout << doubleSign << std::endl;
 	}
 	catch (const std::exception &error) {
-		std::cerr << YELLOW BOLD "Exception caught: " RESET << error.what() << '\n';
+		std::cout << YELLOW BOLD "Exception caught: " RESET << error.what() << '\n';
 	}
 
 	std::cout << WHITE BOLD "\nTriggering GradeTooHighException\n" RESET;
@@ -103,7 +103,7 @@ int main()
 		daniel.incrementGrade();
 	}
 	catch (const std::exception &error) {
-		std::cerr << YELLOW BOLD "Exception caught: " RESET << error.what() << std::endl;
+		std::cout << YELLOW BOLD "Exception caught: " RESET << error.what() << std::endl;
 	}
 
 	std::cout << WHITE BOLD "\nCreating an invalid Bureaucrat\n" RESET;
@@ -111,7 +111,7 @@ int main()
 		Bureaucrat esteban("Esteban", 1212);
 	}
 	catch (const std::exception &error) {
-		std::cerr << YELLOW BOLD "Exception caught: " RESET << error.what() << std::endl;
+		std::cout << YELLOW BOLD "Exception caught: " RESET << error.what() << std::endl;
 	}
 
 	return 0;

@@ -20,7 +20,7 @@ AForm* Intern::makeForm(const std::string &formName, const std::string &target) 
 	} catch (std::bad_alloc &e) {
 		for (int i = 0; i < 3; i++)
 			delete forms[i];
-		std::cerr << "Intern failed to create forms: " << e.what() << std::endl;
+		std::cout << "Intern failed to create forms: " << e.what() << std::endl;
 		return NULL;
 	}
 

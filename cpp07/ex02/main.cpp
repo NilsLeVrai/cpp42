@@ -10,12 +10,12 @@ int main() {
 		for (unsigned int i = 0; i < intArray.size(); i++) {
 			intArray[i] = i * 10;
 		}
-
+		const Array<int> constIntArray(10);
 		for (unsigned int i = 0; i < intArray.size(); i++) {
 			std::cout << "intArray[" << i << "] = " << intArray[i] << std::endl;
 		}
 		
-		std::cout << intArray[23] << std::endl; //Error here
+		//std::cout << intArray[23] << std::endl; //Error here
 
 		std::cout << std::endl << BOLD_CYAN << "--- STRINGS ---\n" << RESET << std::endl;
 	
@@ -29,8 +29,8 @@ int main() {
 			std::cout << "strArray[" << i << "] = " << strArray[i] << std::endl;
 
 
-		//std::cout << strArray[50] << std::endl; //Error here
+		std::cout << strArray[50] << std::endl; //Error here
 	} catch (const std::out_of_range& e) {
-		std::cerr << "Exception: " << e.what() << std::endl;
+		std::cout << "Exception: " << e.what() << std::endl;
 	}
 }

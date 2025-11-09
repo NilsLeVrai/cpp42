@@ -59,7 +59,7 @@ void ScalarConverter::convert(const std::string &literal)
 	if (*end == 'f' && *(end + 1) == '\0') {
 
 	} else if (*end != '\0') {
-		std::cerr << "Error: invalid literal\n";
+		std::cout << "Error: invalid literal\n";
 		return;
 	}
 

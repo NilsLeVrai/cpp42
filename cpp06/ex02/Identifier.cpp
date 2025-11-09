@@ -67,7 +67,7 @@ int main() {
 
 	Base* base = generate();
 	if (!base) {
-		std::cerr << "Failed to generate a Base instance." << std::endl;
+		std::cout << "Failed to generate a Base instance." << std::endl;
 		return 1;
 	}
 
