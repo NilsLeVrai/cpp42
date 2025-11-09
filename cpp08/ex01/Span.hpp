@@ -4,6 +4,7 @@
 #include <algorithm>
 #include <exception>
 #include <climits>
+#include <iostream>
 
 class Span {
 
@@ -31,4 +32,12 @@ class Span {
 		class NoSpanFoundException : public std::exception {
 			const char* what() const throw();
 		};
+
+		template <typename InputIterator>
+		void addRange(InputIterator begin, InputIterator end) {
+			size_t count = std::distance(begin, end);
+			if (_vec.size() + count > _maxSize)
+				throw SpanIsFullException();
+			_vec.insert(_vec.end(), begin, end);
+		}
 };
