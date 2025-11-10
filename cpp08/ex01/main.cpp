@@ -12,8 +12,9 @@ int main()
 		sp.addNumber(17);
 		sp.addNumber(9);
 		sp.addNumber(11);
-		std::cout << "Shortest Span is: " << sp.shortestSpan() << std::endl;
-		std::cout << "Longest Span is: " << sp.longestSpan() << std::endl;
+		std::cout << "===== Basic tests =====\n\n" << std::endl;
+		std::cout << "Shortest Span in sp: (array of 5) " << sp.shortestSpan() << std::endl;
+		std::cout << "Longest Span sp: (array of 5) " << sp.longestSpan() << std::endl;
 	} catch (const std::exception& e) {
 		std::cout << e.what() << std::endl;
 	}
@@ -25,19 +26,21 @@ int main()
 		sp1.addNumber(9);
 		sp1.addNumber(11);
 		sp1.addNumber(1212);
-		std::cout << "Shortest Span is: " << sp1.shortestSpan() << std::endl;
-		std::cout << "Longest Span is: " << sp1.longestSpan() << std::endl;
+		std::cout << "\n\n===== Error thrown because Span is already full =====\n\n" << std::endl;
+		std::cout << "Shortest Span in sp1: (array of 5)" << sp1.shortestSpan() << std::endl;
+		std::cout << "Longest Span in sp1: (array of 5)" << sp1.longestSpan() << std::endl;
 	} catch (const std::exception& e) {
 		std::cout << e.what() << std::endl;
 	}
 
 	try {
-		Span sp2(1000);
+		Span sp2(50000);
 		std::vector<int> sp2numbers;
-		for (int i = 0; i < 1000; i++) {
+		for (int i = 0; i < 50000; i++) {
 			sp2numbers.push_back(i);
 		}
 		sp2.addRange(sp2numbers.begin(), sp2numbers.end());
+		std::cout << "\n\n===== Basic tests with 50.000 numbers =====\n\n" << std::endl;
 		std::cout <<"Shortest Span is: " << sp2.shortestSpan() << std::endl;
 		std::cout << "Longest Span is: "  << sp2.longestSpan() << std::endl;
 	} catch (const std::exception& e) {
@@ -47,6 +50,7 @@ int main()
 	try {
 		Span sp3(5);
 		sp3.addNumber(42);
+		std::cout << "\n\n===== Error thrown because Span cannot be made with less than 2 numbers =====\n\n" << std::endl;
 		std::cout << "Shortest Span is: " << sp3.shortestSpan() << std::endl;
 		std::cout << "Longest Span is: " << sp3.longestSpan() << std::endl;
 	} catch (const std::exception& e) {
@@ -58,6 +62,7 @@ int main()
 		std::list<int> lst;
 		for (int i = 0; i < 10; ++i) lst.push_back(i);
 		sp4.addRange(lst.begin(), lst.end());
+		std::cout << "\n\n===== Error thrown because Span cannot be made with less than 2 numbers =====\n\n" << std::endl;
 		std::cout << "Shortest Span is: " << sp4.shortestSpan() << std::endl;
 		std::cout << "Longest Span is: " << sp4.longestSpan() << std::endl;
 	} catch (const std::exception& e) {
