@@ -48,6 +48,12 @@ int Span::longestSpan() const {
 	return (maxElement - minElement);
 }
 
+void Span::printSpan() const {
+	for (unsigned int i = 0; i < _vec.size(); ++i) {
+		std::cout << _vec[i] << "";
+	}
+	std::cout << std::endl;
+}
 const char* Span::SpanIsFullException::what() const throw() {
     return "Span is already full.";
 }
@@ -55,4 +61,5 @@ const char* Span::SpanIsFullException::what() const throw() {
 const char* Span::NoSpanFoundException::what() const throw() {
     return "No span has been found. Less than two numbers.";
 }
+
 
