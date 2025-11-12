@@ -8,8 +8,6 @@ class BitcoinExchange {
 
     private:
 
-        const char *_file;
-
     public:
         BitcoinExchange();
         ~BitcoinExchange();
@@ -17,4 +15,6 @@ class BitcoinExchange {
         BitcoinExchange& operator=(const BitcoinExchange& other);
 
         void run(const char *filename);
+		void parseLine(std::string line);
+		int checkFiles(const char *filename);
 };
