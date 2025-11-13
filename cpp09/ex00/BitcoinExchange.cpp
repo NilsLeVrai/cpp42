@@ -1,18 +1,19 @@
 #include "BitcoinExchange.hpp"
 
-BitcoinExchange::BitcoinExchange() {} //add les vars plus tard
+BitcoinExchange::BitcoinExchange() {}
 
-BitcoinExchange::~BitcoinExchange() {
-} //delete?
+BitcoinExchange::~BitcoinExchange() {}
 
-/* BitcoinExchange::BitcoinExchange(const BitcoinExchange& other) {
-	if (this != other) {
-	}
+BitcoinExchange::BitcoinExchange(const BitcoinExchange& other) {
+
+	(void)other;
 }
 
-BitcoinExchange& operator=(const BitcoinExchange& other) {
+BitcoinExchange& BitcoinExchange::operator=(const BitcoinExchange& other) {
 
-} */
+	(void)other;
+	return *this;
+}
 
 float BitcoinExchange::strToFloat(const std::string &s) {
 	
