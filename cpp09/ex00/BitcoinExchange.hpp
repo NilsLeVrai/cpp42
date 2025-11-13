@@ -4,24 +4,27 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
+#include <cstdlib>
 
 class BitcoinExchange {
 
-    private:
+	private:
 
-		std::map<std::string, double> _database;
-		void parseLine(std::string line);
-		std::string trim(const std::string &s);
-		double	strToDouble(const std::string &rate);
-		int		checkValidDatas(const std::string &date, const std::string &rate);
+		int								checkValidDate(const std::string &date);
+		int								checkValidFloat(const std::string &rate);
+		void							parseLine(std::string line);
+		float							strToFloat(const std::string &rate);
+		std::string						trim(const std::string &s);
+		std::map<std::string, float>	_database;
 		
-		public:
-        BitcoinExchange();
-        ~BitcoinExchange();
-        BitcoinExchange(const BitcoinExchange& other);
-        BitcoinExchange& operator=(const BitcoinExchange& other);
+	public:
+
+		BitcoinExchange();
+		~BitcoinExchange();
+		BitcoinExchange(const BitcoinExchange& other);
+		BitcoinExchange& operator=(const BitcoinExchange& other);
 		
-        void run(const char *filename);
-		int checkFiles(const char *filename);
-		void createDatabase();
+		int								checkFiles(const char *filename);
+		void							createDatabase();
+		void							run(const char *filename);
 };
