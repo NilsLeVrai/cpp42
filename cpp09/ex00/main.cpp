@@ -3,7 +3,7 @@
 int main(int argc, char **argv) {
 
     if (argc != 2) {
-        std::cout << "Usage: ./btc file.csv" <<std::endl;
+        std::cerr << "Usage: ./btc file.csv" <<std::endl;
         return 1;
     }
     BitcoinExchange bitcoinObj;

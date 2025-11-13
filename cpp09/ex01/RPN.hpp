@@ -9,7 +9,7 @@ class RPN {
 
     private:
 
-        std::stack<int> _stack;
+        std::stack<int> _stackNumber;
         std::string     _input;
 
     public:
@@ -38,6 +38,11 @@ class RPN {
         };
 
         class InvalidNumberOfOperators : public std::exception {
+        public:
+            const char* what() const throw();
+        };
+
+		class DivisionByZeroNotPossible : public std::exception {
         public:
             const char* what() const throw();
         };
