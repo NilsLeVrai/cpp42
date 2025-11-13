@@ -18,30 +18,28 @@ RPN& RPN::operator=(const RPN& other) {
     return *this;
 }
 
+int RPN::checkValidCharacters(const std::string& input) {
+    for (size_t i = 0; i < input.length(); i++) {
+        if (!std::isdigit(input[i]) && input[i] != ' ' && input[i] != '\t'
+            && input[i] != '+' && input[i] != '-' && input[i] != '*'
+            && input[i] != '/') {
+            return (0);
+        }
+    }
+    return (1);
+}
+
 int RPN::calculate(const std::string& input) {
-    /*
-    Nls de demain
-    */
-    (void)input;
-    std::cout << "coucou" << std::endl;
+
+    for (size_t i = 0; i < input.length(); i++) {
+        if (checkValidCharacters(input) == 0)
+            throw NonValidCharacterFound();
+        std::cout << i << std::endl;
+        //continuer tant qu'il y a des espaces ou tabs
+    }
+    //std::cout << "coucou" << std::endl;
     return (0);
     //return 0;
-}
-
-const char* RPN::NonValidCharacterFound::what() const throw() {
-	return "Non valid character found";
-}
-
-const char* RPN::FirstTwoNotDigits::what() const throw() {
-	return "First two characters are not digits";
-}
-
-const char* RPN::NumberHasbeenFound::what() const throw() {
-	return "Number has been found";
-}
-
-const char* RPN::InvalidNumberOfOperators::what() const throw() {
-	return "Invalid number of operators";
 }
 
 /*
@@ -52,3 +50,19 @@ Checks:
     4) check si le nombre d'operateur = nombre de chiffres - 1
     5) je vois rien d'autre
 */
+
+const char* RPN::NonValidCharacterFound::what() const throw() {
+    return "Non valid character found";
+}
+
+const char* RPN::FirstTwoNotDigits::what() const throw() {
+    return "First two characters are not digits";
+}
+
+const char* RPN::NumberHasbeenFound::what() const throw() {
+    return "Number has been found";
+}
+
+const char* RPN::InvalidNumberOfOperators::what() const throw() {
+    return "Invalid number of operators";
+}
