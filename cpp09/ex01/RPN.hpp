@@ -27,22 +27,12 @@ class RPN {
             const char* what() const throw();
         };
 
-        class FirstTwoNotDigits : public std::exception {
-        public:
+        class SyntaxError : public std::exception {
+        public:           
             const char* what() const throw();
         };
 
-        class NumberHasbeenFound : public std::exception {
-        public:
-            const char* what() const throw();
-        };
-
-        class InvalidNumberOfOperators : public std::exception {
-        public:
-            const char* what() const throw();
-        };
-
-		class DivisionByZeroNotPossible : public std::exception {
+        class DivisionByZeroNotPossible : public std::exception {
         public:
             const char* what() const throw();
         };
