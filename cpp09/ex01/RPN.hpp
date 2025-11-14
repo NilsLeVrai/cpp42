@@ -20,12 +20,6 @@ class RPN {
         RPN& operator=(const RPN& other);
 
         int calculate(const std::string& input);
-        int checkValidCharacters(const std::string& input);
-
-        class NonValidCharacterFound : public std::exception {
-        public:
-            const char* what() const throw();
-        };
 
         class SyntaxError : public std::exception {
         public:           

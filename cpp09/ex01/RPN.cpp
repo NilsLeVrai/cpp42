@@ -18,21 +18,8 @@ RPN& RPN::operator=(const RPN& other) {
 	return *this;
 }
 
-int RPN::checkValidCharacters(const std::string& input) {
-	for (size_t i = 0; i < input.length(); i++) {
-		if (!std::isdigit(input[i]) && input[i] != ' ' && input[i] != '\t'
-			&& input[i] != '+' && input[i] != '-' && input[i] != '*'
-			&& input[i] != '/') {
-			return (0);
-		}
-	}
-	return (1);
-}
-
 int RPN::calculate(const std::string& input) {
 	
-	if (checkValidCharacters(input) == 0)
-		throw NonValidCharacterFound();
 	std::stack<int> _stackNumber;
 	for (size_t i = 0; i < input.length(); i++) {
 
@@ -80,10 +67,6 @@ int RPN::calculate(const std::string& input) {
 	if (_stackNumber.size() != 1)
 		throw SyntaxError();
 	return _stackNumber.top();
-}
-
-const char* RPN::NonValidCharacterFound::what() const throw() {
-	return "Non valid character found";
 }
 
 const char* RPN::SyntaxError::what() const throw() {

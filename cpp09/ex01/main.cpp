@@ -9,7 +9,7 @@ int main(int argc, char **argv) {
 	std::string input = argv[1];
     try {
         int result = rpnCalculator.calculate(input);
-        std::cout << "Result: " << result << std::endl;
+        std::cout << result << std::endl;
     } catch (const std::exception &e) {
         std::cerr << "Error: " << e.what() << std::endl;
         return 1;
