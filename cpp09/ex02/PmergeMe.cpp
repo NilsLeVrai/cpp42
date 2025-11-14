@@ -18,29 +18,34 @@ PmergeMe& PmergeMe::operator=(const PmergeMe& other) {
 	return *this;
 }
 
-void PmergeMe::insertData(char** argv) {
-
-	for (int i = 1; argv[i]; i++) {
-		int num = std::atoi(argv[i]);
-		_vectorData.push_back(num);
-		_listData.push_back(num);
-	}
+double PmergeMe::getVectorTime() const {
+	return _elapsedVector;
 }
 
-void PmergeMe::printVector() const {
-
-	for (size_t i = 0; i < _vectorData.size(); i++) {
-		std::cout << _vectorData[i] << " ";
+void PmergeMe::runFordJohnsonVector(std::vector<int>& data) {
+	clock_t start = clock();
+	int res = 0;
+	for (size_t i = 0; i < data.size(); ++i) {
+		res += data[i];
 	}
-	std::cout << std::endl;
+	clock_t end = clock();
+	_elapsedVector = static_cast<double>(end - start) / CLOCKS_PER_SEC;
+	std::cout << "Sum: " << res << std::endl;
 }
 
-void PmergeMe::printList() const {
+double PmergeMe::getListTime() const {
+	return _elapsedList;
+}
 
-	for (std::list<int>::const_iterator it = _listData.begin(); it != _listData.end(); ++it) {
-		std::cout << *it << " ";
+void PmergeMe::runFordJohnsonList(std::list<int>& data) {
+	clock_t start = clock();
+	int res = 0;
+	for (std::list<int>::const_iterator it = data.begin(); it != data.end(); ++it) {
+		res += *it;
 	}
-	std::cout << std::endl;
+	clock_t end = clock();
+	_elapsedList = static_cast<double>(end - start) / CLOCKS_PER_SEC;
+	std::cout << "Sum: " << res << std::endl;
 }
 
 int PmergeMe::calculateLeastOperations(int size) {

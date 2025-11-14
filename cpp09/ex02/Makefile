@@ -7,7 +7,7 @@ INCLUDES = -I ./includes/
 SRC_DIR = .
 
 SOURCES =  main.cpp \
-			RPN.cpp
+			PmergeMe.cpp
 	
 OBJECTS = $(SOURCES:.cpp=.o)
 

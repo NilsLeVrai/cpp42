@@ -11,6 +11,9 @@ class PmergeMe {
 		std::vector<int> _vectorData;
 		std::list<int>   _listData;
 
+		double _elapsedVector;
+		double _elapsedList;
+
 	public:
 
 		PmergeMe();
@@ -18,11 +21,11 @@ class PmergeMe {
 		PmergeMe(const PmergeMe& other);
 		PmergeMe& operator=(const PmergeMe& other);
 
-		void insertData(char** argv);
-		void mergeInsertSortVector(int left, int right);
-		void mergeInsertSortList(std::list<int>::iterator left, std::list<int>::iterator right);
-		void printVector() const;
-		void printList() const;
-		int calculateLeastOperations(int size);
+		double getVectorTime() const;
+		double getListTime() const;
 
+		void runFordJohnsonVector(std::vector<int>& data);
+		void runFordJohnsonList(std::list<int>& data);
+
+		int calculateLeastOperations(int size);
 };
