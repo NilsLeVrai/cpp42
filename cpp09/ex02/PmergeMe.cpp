@@ -28,6 +28,8 @@ void PmergeMe::runFordJohnsonVector(std::vector<int>& data) {
 	for (size_t i = 0; i < data.size(); ++i) {
 		res += data[i];
 	}
+	//merge
+	//insert
 	clock_t end = clock();
 	_elapsedVector = static_cast<double>(end - start) / CLOCKS_PER_SEC;
 	std::cout << "Sum: " << res << std::endl;
@@ -43,9 +45,48 @@ void PmergeMe::runFordJohnsonList(std::list<int>& data) {
 	for (std::list<int>::const_iterator it = data.begin(); it != data.end(); ++it) {
 		res += *it;
 	}
+	//merge
+	//insert
 	clock_t end = clock();
 	_elapsedList = static_cast<double>(end - start) / CLOCKS_PER_SEC;
 	std::cout << "Sum: " << res << std::endl;
+}
+
+void PmergeMe::jacobstahlList() {
+
+	_jacobstahlList.clear();
+	_jacobstahlList.push_back(0);
+	_jacobstahlList.push_back(1);
+
+	size_t u1 = 0;
+	size_t u2 = 1;
+	for (size_t i = 2; i < 35; ++i) {
+		size_t un = u2 + 2 * u1;
+		_jacobstahlList.push_back(un);
+		u1 = u2;
+		u2 = un;
+	}
+	if (!_jacobstahlList.empty()) { // ?
+		_jacobstahlList.pop_front();
+	}
+	if (!_jacobstahlList.empty()) {
+		_jacobstahlList.pop_front();
+	}
+}
+
+void PmergeMe::jacobstahlVector() {
+
+	_jacobstahlVector.clear();
+	_jacobstahlVector.push_back(0);
+	_jacobstahlVector.push_back(1);
+
+	for (size_t i = 2; i < 35; i++) {
+		size_t un = _jacobstahlVector[i - 1] + 2 * _jacobstahlVector[i - 2];
+		_jacobstahlVector.push_back(un);
+	}
+
+	_jacobstahlVector.erase(_jacobstahlVector.begin()); // ?
+	_jacobstahlVector.erase(_jacobstahlVector.begin()); // ?
 }
 
 int PmergeMe::calculateLeastOperations(int size) {

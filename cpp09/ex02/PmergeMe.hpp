@@ -14,6 +14,12 @@ class PmergeMe {
 		double _elapsedVector;
 		double _elapsedList;
 
+		std::vector<long> _jacobstahlVector;
+		std::list<long> _jacobstahlList;
+
+		void jacobstahlList();
+		void jacobstahlVector();
+
 	public:
 
 		PmergeMe();
