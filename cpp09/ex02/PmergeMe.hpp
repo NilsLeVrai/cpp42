@@ -3,6 +3,10 @@
 #include <iostream>
 #include <vector>
 #include <list>
+#include <ctime>
+#include <climits>
+#include <cstdlib>
+#include <cmath>
 
 class PmergeMe {
 
@@ -19,6 +23,11 @@ class PmergeMe {
 
 		void jacobstahlList();
 		void jacobstahlVector();
+
+		std::vector<int> mergeVector(const std::vector<int>& vec);
+		std::list<int> mergeList(const std::list<int>& lst);
+		std::vector<size_t> insertVector(size_t pendSize);
+		std::vector<size_t> insertList(size_t pendSize);
 
 	public:
 
